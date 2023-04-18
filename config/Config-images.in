@@ -276,13 +276,16 @@ menu "Target Images"
 		bool "Build VMware image files (VMDK)"
 		depends on TARGET_x86
 		depends on GRUB_IMAGES || GRUB_EFI_IMAGES
-		default y
+#取消VMDK文件输出
+		default n
 		select PACKAGE_kmod-e1000
 
 	config VHDX_IMAGES
 		bool "Build Hyper-V image files (VHDX)"
 		depends on TARGET_x86
 		depends on GRUB_IMAGES || GRUB_EFI_IMAGES
+#增加输出Hyper-V硬盘文件
+                default y
 		select PACKAGE_kmod-e1000
 
 	config TARGET_IMAGES_GZIP
